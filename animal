@@ -1,0 +1,17 @@
+<?php
+include 'connect.php';
+$nm = $_POST['name'];
+$cy = $_POST['category'];
+$bd = $_POST['breed'];
+$clr = $_POST['color'];
+$gen = $_POST['gender'];
+$hc = $_POST['healthcondition'];
+
+$sql = mysqli_query($con,"INSERT INTO animal(name,category,breed,color,gender,healthcondition)values('$nm','$tm','$des','$loc')");
+if ($sql){
+    $my['result'] = 'success';
+   
+}else{
+    $my['result'] = 'failed';
+}
+echo json_encode($my);
